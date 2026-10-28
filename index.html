@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unit 9 — The natural world · IELTS Vocabulary</title>
+<style>
+:root{--g:#2f5d3a;--g2:#e4ede0;--bg:#f7f5ee;--ink:#1f2a22;--bad:#a1281f;--ok:#1d6b34;--line:#cfd8c9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,serif}
+header{background:#111;color:#fff;padding:20px 16px}header h1{margin:0;font:800 2rem system-ui}header h1 span{font-size:3rem;margin-right:10px}header p{margin:4px 0 0;font:600 1.05rem system-ui}
+.pb{height:8px;background:#ffffff40;border-radius:6px;overflow:hidden;max-width:420px;margin-top:10px}.pb i{display:block;height:100%;background:#f0d58c;width:0}#pt{font:600 .8rem system-ui;margin-top:3px}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);display:flex;gap:6px;padding:6px 10px;overflow-x:auto}
+nav button{font:600 .9rem system-ui;border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:20px;cursor:pointer;white-space:nowrap}nav button[aria-current=true]{background:var(--g);color:#fff}
+main{max-width:900px;margin:0 auto;padding:14px}h2{background:#111;color:#fff;display:inline-block;padding:3px 12px;font:700 1.3rem system-ui;margin:14px 0 4px}
+.ex{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:14px 0}.hd{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}.hd h3{margin:0;font:700 1.05rem system-ui}
+.n{display:inline-block;background:#111;color:#fff;padding:0 7px;margin-right:6px;border-radius:3px}.badge{font:600 .75rem system-ui;background:var(--g2);padding:3px 9px;border-radius:12px;height:fit-content}
+.ins{font:.9rem system-ui;color:#456}.warn,.txt{border:1px solid #999;border-radius:6px;padding:8px 12px;margin:8px 0;font-size:.95rem}.warn{background:#fff8e1;font-family:system-ui}.txt{background:#fafafa}
+ol{padding-left:22px}li{margin:12px 0}select,input[type=text]{padding:5px 8px;border:1px solid #9aa99a;border-radius:6px;background:#fff;max-width:100%}input.w{width:min(100%,420px)}
+button:focus-visible,select:focus-visible,input:focus-visible,audio:focus-visible{outline:3px solid #e0a100;outline-offset:2px}
+.pri,.alt{font:600 .9rem system-ui;padding:8px 16px;border-radius:8px;border:1px solid var(--g);cursor:pointer}.pri{background:var(--g);color:#fff}.alt{background:#fff;color:var(--g)}button:disabled{opacity:.5}
+.fb{font:.85rem system-ui;margin-top:3px}.fb.ok{color:var(--ok)}.fb.bad{color:var(--bad)}.res{font:600 .95rem system-ui;margin-top:10px}
+.pics{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.ph{height:110px;max-width:100%;border-radius:6px;object-fit:cover}.hero .ph{height:130px}.em{font-size:3.2rem;line-height:1.1}.hero .em{font-size:4rem}
+.aud{background:var(--g2);border-radius:8px;padding:8px 12px;margin:8px 0;font:.9rem system-ui}.cols{columns:3 200px;font:.95rem system-ui}.cols p{margin:0 0 6px;break-inside:avoid}
+footer{max-width:900px;margin:20px auto;padding:0 14px 30px;font:.8rem system-ui;color:#555}
+.cover{width:100%;max-height:280px;object-fit:cover;display:block}</style></head><body>
+<header><h1><span>9</span>The natural world</h1><p>Flora and fauna, agriculture</p><div class="pb"><i id="pf"></i></div><div id="pt"></div></header>
+<div id="cv"></div><nav id="nav"></nav><main id="main"></main>
+<footer><button class="alt" id="reset">Reset progress</button><p>Progress is saved only in this browser. Each exercise is checked automatically when you press Submit Answer.</p></footer>
+<script>
+/* ===== IMAGE MANIFEST: put a file images/<name>.jpg (or .png/.jpeg/.webp) for each name below ===== */
+const IM={lion:"lion",kangaroo:"kangaroo",tree:"a tree",elephant:"elephant","palm-tree":"palm tree",rose:"rose",tulip:"tulip",daisy:"daisy",weed:"a weed",
+vegetation:"vegetation",branch:"tree branch",twig:"twig",root:"plant roots",coat:"animal coat",predator:"predator hunting",trunk:"tree trunk",fur:"fur",hide:"animal hide",scales:"scales",feathers:"feathers",paw:"paw",claw:"claw",thorn:"thorns",petal:"flower petal",beak:"bird beak",horn:"horn",
+meerkat:"meerkat",crop:"crop field",shrub:"shrub",bush:"bush",tropical:"tropical forest",subtropical:"subtropical landscape",humid:"humid rainforest",arid:"arid land","semi-arid":"semi-arid landscape",desert:"desert",
+"prickly-pear":"prickly pear cactus","cactoblastis-moth":"Cactoblastis moth","cane-toad":"cane toad","cane-beetle":"cane beetle",cat:"cat",fox:"fox",rabbit:"rabbit","gm-crops":"crop field","pesticide-spraying":"spraying a field",soil:"soil"};
+/* ФОТО: имя -> ссылка. Можно оставить путь к файлу в папке images/ или заменить на ссылку https://... (прямая ссылка на .jpg). Удалите строку, чтобы убрать фото. */
+const PHOTOS={
+cover:"cover.jpg",
+meerkat:"meerkat.jpg",
+claw:"claw.jpg",
+hide:"hide.jpg",
+thorn:"thorn.jpg",
+"prickly-pear":"prickly-pear.jpg",
+"cane-toad":"cane-toad.jpg"
+};
+const pic=n=>PHOTOS[n]?`<img class="ph" src="${PHOTOS[n]}" alt="${IM[n]||n}" onerror="this.remove()">`:"";
+const pics=a=>a&&a.length?`<div class="pics">${[].concat(a).map(pic).join("")}</div>`:"";
+const norm=s=>(s||"").toLowerCase().replace(/[^a-z0-9\s\-]/g," ").replace(/\s+/g," ").trim();
+const sg=s=>s.toLowerCase().trim().replace(/\s+/g," ").replace(/(?<!s)s$/,"");
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let P;try{P=JSON.parse(localStorage.getItem("u9book")||"null")}catch(e){}P=P&&P.ex?P:{ex:{}};
+const save=()=>{try{localStorage.setItem("u9book",JSON.stringify(P))}catch(e){}};
+const EX=[];
+function mk(sec,id,title,instr,items,x={}){EX.push({sec,id,title,instr,x,items:items.map(r=>({q:(x.pre||"")+r[0],a:r[1],o:r[2],why:r[3],img:r[4],list:r[5]&&r[5].list,min:r[5]&&r[5].min,fx:x.fx}))})}
+const L=(l,m=5)=>({list:l,min:m});
+/* ===== FLORA AND FAUNA ===== */
+mk("F","1.1","How many plants and animals do you know?","Type at least five names for each, separated by commas. Any correct example is accepted.",[
+["A. Five animals found in Africa:","",null,"e.g. elephant, giraffe, lion, hippopotamus, ostrich, rhinoceros",["lion","elephant"],L("elephant,giraffe,lion,hippopotamus,hippo,ostrich,rhinoceros,rhino,zebra,cheetah,leopard,gorilla,meerkat,wildebeest,buffalo,hyena,antelope,crocodile,chimpanzee,warthog,gazelle,baboon".split(","))],
+["B. Five different types of flower:","",null,"e.g. carnation, daisy, lily, rose, tulip",["rose","tulip"],L("carnation,daisy,lily,rose,tulip,orchid,sunflower,daffodil,poppy,lavender,violet,jasmine,lotus,iris,marigold,lilac,peony".split(","))],
+["C. Five types of fruit:","",null,"e.g. apple, banana, grape, mango, orange, pear, pineapple",null,L("apple,banana,grape,grapefruit,mango,melon,orange,pear,pineapple,lemon,peach,plum,cherry,strawberry,kiwi,watermelon,apricot,lime,papaya,coconut,fig,raspberry".split(","))],
+["D. Five animals found in Australia:","",null,"e.g. emu, echidna, dingo, kangaroo, koala, platypus",["kangaroo"],L("emu,echidna,dingo,kangaroo,koala,platypus,wombat,kookaburra,wallaby,cassowary,quokka,tasmanian devil".split(","))],
+["E. Five different types of tree:","",null,"e.g. gum, maple, oak, pine, palm",["tree","palm-tree"],L("gum,maple,oak,pine,palm,birch,willow,elm,cedar,beech,ash,cypress,eucalyptus,baobab,fir,poplar,olive,walnut,sycamore".split(","))],
+["F. Five types of vegetable:","",null,"e.g. aubergine/eggplant, broccoli, courgette/zucchini, carrot, cauliflower, pea, pumpkin, potato",null,L("aubergine,eggplant,broccoli,courgette,zucchini,carrot,cauliflower,pea,pumpkin,potato,onion,tomato,cabbage,spinach,lettuce,cucumber,pepper,corn,bean,garlic,celery,beetroot,leek,radish".split(","))]],{hero:["lion","kangaroo","tree","elephant","palm-tree","rose","tulip"]});
+const W12="flora,fauna,vegetation,branch,twig,root,coat,predator,trunk,fur,hide,scales,feathers,paw,claw,thorn,petal,beak,horn".split(",");
+const AN={flora:"plants",fauna:"animals",vegetation:"plants",branch:"plants",twig:"plants",root:"plants",coat:"animals",predator:"animals",trunk:"both",fur:"animals",hide:"animals",scales:"animals",feathers:"animals",paw:"animals",claw:"animals",thorn:"plants",petal:"plants",beak:"animals",horn:"animals"};
+mk("F","1.2","Plants or animals?","Put each word in the correct column. One word can go in both.",W12.map(w=>[w,AN[w],["animals","plants","both"],w=="trunk"?"A trunk can be part of a tree or an elephant.":"",IM[w]?[w]:null]),{fx:1,pre:"Animals, plants or both: ",note:"<b>Error warning.</b> We say we must take care of <b>nature</b> (not “the nature”). <b>Natural</b> is the adjective: It is a <b>natural</b> process (not “a nature process”)."});
+mk("F","1.2b","Skin and covering","Which five words in the animal column are connected to an animal's skin or covering?",[["Type the five words, separated by commas:","",null,"coat, fur, hide, scales, feathers",["coat","fur","hide","scales","feathers"],L(["coat","fur","hide","scales","feathers"])]]);
+const CN=["animal","human","nature","natural"];
+mk("F","1.3","Compound nouns","Complete each sentence with animal, human, nature or natural.",[
+["It is human ___ to look for solutions when things go wrong.","nature",CN],["A vegan diet contains no ___ products.","animal",CN],["Some customers prefer to speak to a ___ being, not a machine.","human",CN],["Floods remind us how powerful Mother ___ can be.","nature",CN],["The lion is a top predator of the ___ kingdom.","animal",CN],["Zoo animals are happiest in their ___ habitat.","natural",CN],["Oil spills can destroy the ___ balance of a coast.","natural",CN],["Every person has basic ___ rights.","human",CN]],{fx:1});
+mk("F","1.4","Listening 9a — the meerkat","Listen to the description of a meerkat and complete the table. Answers follow the book's answer key.",[
+["Habitat: found in South Africa in ___ areas.","semi-arid|semi arid"],["Habitat: avoids woodland and thick ___.","vegetation"],["Habitat: it sleeps in ___.","burrows|burrow|dens|den"],["Habitat: if necessary, it makes a ___ between rocks.","den"],["Diet: mostly eats (1) ___","insects|spiders|snails"],["Diet: mostly eats (2) ___","insects|spiders|snails"],["Diet: mostly eats (3) ___","insects|spiders|snails"],["Diet: occasionally eats small rodents and the ___ of certain plants.","roots|root"]],{audio:"a",hero:["meerkat"]});
+/* ===== AGRICULTURE ===== */
+const OO=(a,i,w)=>{return[w.join(" · "),a,w,i]};
+mk("A","2.1","Odd one out","Choose the word that is different from the others. The reason appears after you submit.",[
+[...OO("weed","We do not want to grow weeds; the others are flowers we want.",["rose","tulip","daisy","weed"]),["rose","tulip","daisy","weed"]],
+[...OO("soil","The others are verbs.",["plant","grow","cultivate","soil"]),["soil"]],
+[...OO("crop","The others are single plants.",["crop","plant","shrub","bush"]),["crop-field","shrub","bush"].map(n=>n=="crop-field"?"crop":n)],
+OO("chemical","The others mean without chemicals.",["organic","natural","chemical","biological"]),
+[...OO("arid","The others are all wet climates.",["tropical","subtropical","humid","arid"]),["tropical","subtropical","humid","arid"]],
+[...OO("tropical","The others are all dry climates.",["arid","desert","semi-arid","tropical"]),["arid","desert","semi-arid","tropical"]],
+OO("introduced","The others all refer to things that naturally belong to an area.",["endemic","native","introduced","local"])],{fx:1,pre:"Odd one out: "});
+const TX1="For as long as there has been farming, growers have tried to control nature without <b>pesticides</b>, using biological methods. One approach is to bring in a predator that eats the pests. In 1925 this worked in Australia against the prickly pear, a cactus first planted as a divider between <b>paddocks</b>. It spread across millions of hectares and made the farmland unusable until the Cactoblastis moth larva was introduced; within ten years the cactus was practically <b>eradicated</b>. Later attempts did less well. Farmers brought in the South American cane toad to deal with the cane beetle, but the toad ignored the beetle, multiplied rapidly and caused numbers of <b>native</b> mammals and reptiles to decline. The result was <b>catastrophic</b>.";
+const TF=["true","false"];
+mk("A","2.2","Introduced species","Read the text, then decide whether each statement is true or false. (The text is a short summary based on the unit's passage.)",[
+["Farmers do not like using chemicals to kill pests.","true",TF,"pesticides = chemicals to kill pests"],["The prickly pear was planted as a type of barrier between fields.","true",TF,"paddocks = fields"],["The Cactoblastis moth killed off nearly all the prickly pear plants.","true",TF,"eradicated = killed off"],["The cane toad was a native species in Australia.","false",TF,"native is the opposite of introduced"],["Using the cane toad was very successful.","false",TF,"very successful is the opposite of catastrophic"]],{fx:1,text:TX1,pics:["prickly-pear","cactoblastis-moth","cane-toad","cane-beetle"]});
+const TX2="Other introduced species have been <i>disastrous</i> for native Australian animals. Since the cat, the fox and the rabbit arrived from Europe, 19 native species have become <i>extinct</i> and about 250 more are <i>endangered</i> or <i>vulnerable</i>. Today, pests are tackled with <i>genetically modified</i> crops, but nobody knows yet whether this will have long-term <i>repercussions</i>, especially for the <i>ecological balance</i> of the farmland. Some people worry that insects will <i>become resistant</i> to the new crops, making them even harder to control.";
+const D8=["vulnerable","repercussions","become resistant","endangered","extinct","genetically modified","disastrous","ecological balance"];
+mk("A","2.3","Match the words in italics to the definitions","Read the text, then choose the word or phrase that matches each definition.",[
+["at risk","vulnerable",D8],["negative effects","repercussions",D8],["to stop being affected by something","become resistant",D8],["at risk of dying out","endangered",D8],["no longer existing","extinct",D8],["crops whose genes have been scientifically changed","genetically modified",D8],["extremely bad or unsuccessful","disastrous",D8],["the relationship between plants, animals, land, air and water","ecological balance",D8]],{text:TX2,pre:"Means: ",pics:["cat","fox","rabbit"]});
+mk("A","2.4","Word building","Complete the table. Only forms that exist in the table are asked.",[
+["agriculture → adjective:","agricultural"],["agriculture → adverb:","agriculturally"],["ecology → adjective:","ecological"],["ecology → adverb:","ecologically"],["evolution → adjective:","evolutionary"],["evolution → verb:","evolve"],["extinction → adjective:","extinct"],["extinction → verb phrase (___ extinct):","become"],["nature → adjective:","natural"],["nature → adverb:","naturally"],["genetics → adjective:","genetic"],["genetics → adverb:","genetically"]]);
+mk("A","3","Improve the text","Replace the idea in brackets with a suitable word or phrase from this unit.",[
+["Some farmers grow ___ (fruit and vegetables) whose genes have been altered.","crops|crop"],["These plants are ___ (changed so their genes are different).","genetically modified"],["The aim is to ___ (totally stop) the pests.","eradicate"],["This type of ___ (farming) has advantages and disadvantages.","agriculture"],["The plants poison small ___ (flies and caterpillars).","insects"],["So farmers need fewer ___ (chemicals to kill these animals).","pesticides"],["That is better for the ___ (earth that plants grow in).","soil"],["It could also protect other ___ (plants).","vegetation"],["It also protects the ___ (living space) of the animals.","habitat"],["Over time pests may ___ (stop being killed by) the toxins.","become resistant to|become resistant"],["The toxins may upset the ___ (way plants and animals live together).","ecological balance"],["More animals could become ___ (at risk of extinction).","endangered"]],{pics:["gm-crops","pesticide-spraying","soil"]});
+const SY=["1st","2nd","3rd","4th"];
+mk("A","4","Pronunciation — the schwa (ə)","Listen to Audio 9b. Each word has one weak vowel (schwa). In which syllable is it? Answers use the IPA from the unit wordlist, not the recording.",[["adapt","1st"],["agriculture","4th"],["chemical","3rd"],["climate","2nd"],["disastrous","3rd"],["endangered","3rd"],["human","2nd"],["genetically","1st"]].map(r=>[r[0],r[1],SY]),{audio:"b",fx:1,pre:"Schwa in: "});
+/* ===== WORDLIST ===== */
+const WL={Nouns:"agriculture /ˈægrɪkʌltʃə/|animal kingdom|burrow /ˈbʌrəʊ/|climate /ˈklaɪmət/|crop(s) /krɒp/|decline /dɪˈklaɪn/|den /den/|disaster /dɪˈzɑːstə/|ecological balance|ecology /iːˈkɒlədʒi/|evolution /ˌiːvəˈluːʃən/|extinction /ɪkˈstɪŋkʃən/|fauna /ˈfɔːnə/|flora /ˈflɔːrə/|genetics /dʒəˈnetɪks/|habitat /ˈhæbɪtæt/|human nature|insect /ˈɪnsekt/|Mother Nature|pesticides /ˈpestɪsaɪdz/|predator /ˈpredətə/|prey /preɪ/|repercussions /ˌriːpəˈkʌʃənz/|scent /sent/|species /ˈspiːʃiːz/|soil /sɔɪl/|vegetation /ˌvedʒɪˈteɪʃən/|vermin /ˈvɜːmɪn/|weed /wiːd/",
+Adjectives:"arid /ˈærɪd/|catastrophic /ˌkætəˈstrɒfɪk/|disastrous /dɪˈzɑːstrəs/|domesticated /dəˈmestɪkeɪtɪd/|endangered /ɪnˈdeɪndʒəd/|extinct /ɪkˈstɪŋkt/|genetically modified|introduced /ˌɪntrəˈdjuːst/|native /ˈneɪtɪv/|natural /ˈnætʃərəl/|resistant /rɪˈzɪstənt/|semi-arid /ˈsemi ˈærɪd/|tropical /ˈtrɒpɪkəl/|vulnerable /ˈvʌlnərəbəl/|wild /waɪld/",
+Verbs:"adapt /əˈdæpt/|combat /ˈkɒmbæt/|cultivate /ˈkʌltɪveɪt/|eradicate /ɪˈrædɪkeɪt/|evolve /ɪˈvɒlv/|hibernate /ˈhaɪbəneɪt/|tolerate /ˈtɒləreɪt/"};
+const player=k=>`<div class="aud"><b>Audio ${k=="a"?"9a":"9b"}</b><br><audio controls preload="metadata" src="audio${k=="a"?"22_9a":"23_9b"}_The_Natural_World.mp3.mp3"></audio><br><button class="alt" onclick="rp(this)">Replay</button> Speed <select onchange="sp(this)"><option>0.75</option><option selected>1</option><option>1.25</option></select>×</div>`;
+const au=e=>e.closest(".aud").querySelector("audio");function rp(b){const a=au(b);a.currentTime=0;a.play()}function sp(s){au(s).playbackRate=+s.value}
+function prog(){let d=0,s=0,n=0;EX.forEach(e=>{const r=P.ex[e.id];if(r){d++;s+=r.s;n+=r.n}});document.getElementById("pf").style.width=100*d/EX.length+"%";document.getElementById("pt").textContent=`${d}/${EX.length} exercises attempted · ${n?Math.round(100*s/n):0}% correct`}
+function show(box,ex){
+ const st=P.ex[ex.id]||{};
+ box.innerHTML=`<div class="hd"><h3><span class="n">${ex.id}</span>${ex.title}</h3><span class="badge">${st.status||"Not attempted"}</span></div><p class="ins">${ex.instr}</p>${ex.x.note?`<div class="warn">${ex.x.note}</div>`:""}<div class="hero">${pics(ex.x.hero)}</div>${pics(ex.x.pics)}${ex.x.text?`<div class="txt">${ex.x.text}</div>`:""}${ex.x.audio?player(ex.x.audio):""}<ol></ol><button class="pri">Submit Answer</button> <button class="alt" hidden>Try again</button><div class="res" role="status" aria-live="polite"></div>`;
+ const ol=box.querySelector("ol");
+ ex.items.forEach((t,i)=>{const li=document.createElement("li");
+  const f=t.list?`<br><input type="text" class="w" data-i="${i}" autocomplete="off" aria-label="Answer ${i+1}">`:t.o?`<select data-i="${i}" aria-label="Answer ${i+1}"><option value="">Choose…</option>${(t.fx?t.o:shuf(t.o)).map(o=>`<option>${o}</option>`).join("")}</select>`:`<input type="text" data-i="${i}" autocomplete="off" aria-label="Answer ${i+1}">`;
+  li.innerHTML=pics(t.img)+(t.q.includes("___")?t.q.replace("___",f):t.q+" "+f)+'<div class="fb"></div>';ol.appendChild(li)});
+ const sub=box.querySelector(".pri"),re=box.querySelector(".alt"),res=box.querySelector(".res");
+ sub.onclick=()=>{
+  const els=[...box.querySelectorAll("[data-i]")],ans=els.map(e=>e.value),sig=ans.join("\u0001"),old=P.ex[ex.id]||{tries:0};let sc=0;
+  ex.items.forEach((t,i)=>{let ok;
+   if(t.list){const A=new Set(t.list.map(sg));ok=new Set(ans[i].split(/[,;\n]+/).map(sg).filter(x=>A.has(x))).size>=t.min}
+   else ok=t.o?ans[i]===t.a:t.a.split("|").map(norm).includes(norm(ans[i]));
+   if(ok)sc++;const fb=ol.children[i].querySelector(".fb");fb.className="fb "+(ok?"ok":"bad");
+   fb.textContent=(ok?"✓ Correct":"✗ Incorrect"+(t.list?"":" — answer: "+t.a.split("|")[0]))+(t.why&&(!ok||t.list||!t.o)?" — "+t.why:t.why?" — "+t.why:"")});
+  const n=ex.items.length;
+  if(sig!==old.sig){const tries=(old.tries||0)+1;P.ex[ex.id]={s:sc,n,tries,sig,status:sc==n?(tries>1?"Completed after retry":"Submitted – correct"):"Submitted – incorrect"};save()}
+  box.querySelector(".badge").textContent=P.ex[ex.id].status;res.textContent=`Score: ${sc}/${n} (${Math.round(100*sc/n)}%) — ${P.ex[ex.id].status}`;
+  els.forEach(e=>e.disabled=true);sub.disabled=true;re.hidden=false;re.onclick=()=>show(box,ex);prog()}}
+const nav=document.getElementById("nav"),main=document.getElementById("main");
+const S=[["F","Flora and fauna"],["A","Agriculture"],["W","Wordlist"]];
+S.forEach(([k,t])=>{const b=document.createElement("button");b.textContent=t;b.dataset.k=k;b.onclick=()=>go(k);nav.appendChild(b);
+ const s=document.createElement("section");s.id="s"+k;s.hidden=true;main.appendChild(s);
+ if(k=="W"){s.innerHTML="<h2>Unit 9 · The natural world</h2>"+Object.entries(WL).map(([g,w])=>`<h3 style="font-family:system-ui">${g}</h3><div class="cols">${w.split("|").map(x=>`<p>${x}</p>`).join("")}</div>`).join("")}
+ else{s.innerHTML=`<h2>${t}</h2>`;EX.filter(e=>e.sec==k).forEach(e=>{const a=document.createElement("article");a.className="ex";s.appendChild(a);show(a,e)})}});
+function go(k){document.querySelectorAll("main section").forEach(s=>s.hidden=s.id!="s"+k);nav.querySelectorAll("button").forEach(b=>b.setAttribute("aria-current",b.dataset.k==k));scrollTo(0,0)}
+document.getElementById("reset").onclick=()=>{if(confirm("Reset all progress?")){P={ex:{}};save();location.reload()}};
+document.getElementById("cv").innerHTML=PHOTOS.cover?`<img class="cover" src="${PHOTOS.cover}" alt="Wildlife and nature" onerror="this.remove()">`:"";
+go("F");prog();
+</script></body></html>
