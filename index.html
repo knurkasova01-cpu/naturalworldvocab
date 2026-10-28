@@ -31,13 +31,13 @@ meerkat:"meerkat",crop:"crop field",shrub:"shrub",bush:"bush",tropical:"tropical
 "prickly-pear":"prickly pear cactus","cactoblastis-moth":"Cactoblastis moth","cane-toad":"cane toad","cane-beetle":"cane beetle",cat:"cat",fox:"fox",rabbit:"rabbit","gm-crops":"crop field","pesticide-spraying":"spraying a field",soil:"soil"};
 /* ФОТО: имя -> ссылка. Можно оставить путь к файлу в папке images/ или заменить на ссылку https://... (прямая ссылка на .jpg). Удалите строку, чтобы убрать фото. */
 const PHOTOS={
-cover:"images/cover.jpg",
-meerkat:"images/meerkat.jpg",
-claw:"images/claw.jpg",
-hide:"images/hide.jpg",
-thorn:"images/thorn.jpg",
-"prickly-pear":"images/prickly-pear.jpg",
-"cane-toad":"images/cane-toad.jpg"
+cover:"cover.jpg",
+meerkat:"meerkat.jpg",
+claw:"claw.jpg",
+hide:"hide.jpg",
+thorn:"thorn.jpg",
+"prickly-pear":"prickly-pear.jpg",
+"cane-toad":"cane-toad.jpg"
 };
 const pic=n=>PHOTOS[n]?`<img class="ph" src="${PHOTOS[n]}" alt="${IM[n]||n}" onerror="this.remove()">`:"";
 const pics=a=>a&&a.length?`<div class="pics">${[].concat(a).map(pic).join("")}</div>`:"";
@@ -94,7 +94,7 @@ mk("A","4","Pronunciation — the schwa (ə)","Listen to Audio 9b. Each word has
 const WL={Nouns:"agriculture /ˈægrɪkʌltʃə/|animal kingdom|burrow /ˈbʌrəʊ/|climate /ˈklaɪmət/|crop(s) /krɒp/|decline /dɪˈklaɪn/|den /den/|disaster /dɪˈzɑːstə/|ecological balance|ecology /iːˈkɒlədʒi/|evolution /ˌiːvəˈluːʃən/|extinction /ɪkˈstɪŋkʃən/|fauna /ˈfɔːnə/|flora /ˈflɔːrə/|genetics /dʒəˈnetɪks/|habitat /ˈhæbɪtæt/|human nature|insect /ˈɪnsekt/|Mother Nature|pesticides /ˈpestɪsaɪdz/|predator /ˈpredətə/|prey /preɪ/|repercussions /ˌriːpəˈkʌʃənz/|scent /sent/|species /ˈspiːʃiːz/|soil /sɔɪl/|vegetation /ˌvedʒɪˈteɪʃən/|vermin /ˈvɜːmɪn/|weed /wiːd/",
 Adjectives:"arid /ˈærɪd/|catastrophic /ˌkætəˈstrɒfɪk/|disastrous /dɪˈzɑːstrəs/|domesticated /dəˈmestɪkeɪtɪd/|endangered /ɪnˈdeɪndʒəd/|extinct /ɪkˈstɪŋkt/|genetically modified|introduced /ˌɪntrəˈdjuːst/|native /ˈneɪtɪv/|natural /ˈnætʃərəl/|resistant /rɪˈzɪstənt/|semi-arid /ˈsemi ˈærɪd/|tropical /ˈtrɒpɪkəl/|vulnerable /ˈvʌlnərəbəl/|wild /waɪld/",
 Verbs:"adapt /əˈdæpt/|combat /ˈkɒmbæt/|cultivate /ˈkʌltɪveɪt/|eradicate /ɪˈrædɪkeɪt/|evolve /ɪˈvɒlv/|hibernate /ˈhaɪbəneɪt/|tolerate /ˈtɒləreɪt/"};
-const player=k=>`<div class="aud"><b>Audio ${k=="a"?"9a":"9b"}</b><br><audio controls preload="metadata" src="audio/${k=="a"?"22_9a":"23_9b"}_The_Natural_World.mp3"></audio><br><button class="alt" onclick="rp(this)">Replay</button> Speed <select onchange="sp(this)"><option>0.75</option><option selected>1</option><option>1.25</option></select>×</div>`;
+const player=k=>`<div class="aud"><b>Audio ${k=="a"?"9a":"9b"}</b><br><audio controls preload="metadata" src="audio${k=="a"?"22_9a":"23_9b"}_The_Natural_World.mp3.mp3"></audio><br><button class="alt" onclick="rp(this)">Replay</button> Speed <select onchange="sp(this)"><option>0.75</option><option selected>1</option><option>1.25</option></select>×</div>`;
 const au=e=>e.closest(".aud").querySelector("audio");function rp(b){const a=au(b);a.currentTime=0;a.play()}function sp(s){au(s).playbackRate=+s.value}
 function prog(){let d=0,s=0,n=0;EX.forEach(e=>{const r=P.ex[e.id];if(r){d++;s+=r.s;n+=r.n}});document.getElementById("pf").style.width=100*d/EX.length+"%";document.getElementById("pt").textContent=`${d}/${EX.length} exercises attempted · ${n?Math.round(100*s/n):0}% correct`}
 function show(box,ex){
